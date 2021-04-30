@@ -18,6 +18,9 @@ import (
 //Here is our waitgroup
 var wg sync.WaitGroup
 
+//Here are our environment examples
+var TEST_VAR_ENV42069 string
+
 /* TEMPLATE DEFINITION BEGINNING */
 var template1 *template.Template
 
@@ -29,6 +32,20 @@ var funcMap = template.FuncMap{
 //Parse our templates
 func init() {
 	template1 = template.Must(template.ParseGlob("./static/templates/*"))
+	setEnvVariables()
+}
+
+//Set our environment variables
+func setEnvVariables() {
+	_, ok := os.LookupEnv("TEST_VAR_ENV42069")
+	if !ok {
+		message := "This env variable is not present: " + "TEST_VAR_ENV42069"
+		fmt.Println(message)
+		logWriter(message)
+	} else {
+		TEST_VAR_ENV42069 = os.Getenv("TEST_VAR_ENV42069")
+		fmt.Printf("DEBUG: Environment test host is: %v\n", TEST_VAR_ENV42069)
+	}
 }
 
 //Writes to the log; called from most anywhere in this program!

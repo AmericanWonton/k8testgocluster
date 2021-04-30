@@ -3,5 +3,10 @@ Things to do:
 1. Build docker image.
 2. Figure out how to make pods from the URL of my docker image 
 3. Make sure my application can be accessed properly
-4. See if I can expose certain enviornment variables for a secretes file in my app container
+4. See if I can expose certain enviornment variables for a secrets file in my app container
 5. 
+
+
+
+How to create environment variables: https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
+Might want to make them permanant to your session: https://phoenixnap.com/kb/linux-set-environment-variable

@@ -1,3 +1,17 @@
 2021/04/30 09:46:07 
 
 DEBUG: We are now handling requests
+2021/04/30 10:08:52 This env variable is not present: TEST_VAR_ENV42069
+2021/04/30 10:08:52 
+
+DEBUG: We are now handling requests
+2021/04/30 10:09:29 This env variable is not present: TEST_VAR_ENV42069
+2021/04/30 10:09:29 
+
+DEBUG: We are now handling requests
+2021/04/30 10:22:05 
+
+DEBUG: We are now handling requests
+2021/04/30 10:26:15 
+
+DEBUG: We are now handling requests
