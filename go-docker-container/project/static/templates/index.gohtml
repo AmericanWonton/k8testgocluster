@@ -12,7 +12,7 @@
         {{/* Here are our Media Query and stylesheets */}}
         {{template "media-queries"}}
         {{/* Here is our Javascript or additional code needed */}}
-        
+        <script src="static/js/stuff.js"></script>
     </head>
     <body>
         {{/* Here is our header */}}
@@ -23,7 +23,11 @@
 
         <p>The first environment variable is:  {{.EnvVariable1}}</p>
 
-        <p>Mongo URI is: {{.MongoURI}}</p>
+        <p>Here is our magical button. Click it and refresh the page to see how many times it's been clicked.</p>
+
+        <button onclick="buttonAdder()">Increase time clicked</button>
+
+        <p>Wow, people like you have clicked this button {{.NumOClicks}} of times. Life truly is amazing.</p>
         
         {{/* Here is our footer */}}
     </body>

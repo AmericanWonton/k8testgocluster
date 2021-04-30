@@ -57,6 +57,8 @@ func setEnvVariables() {
 	} else {
 		MONGO_URI = os.Getenv("MONGO_URI")
 		fmt.Printf("DEBUG: Environment Mongo host is: %v\n", MONGO_URI)
+		//Set Mongo URI here
+		mongoURI = MONGO_URI
 	}
 }
 
@@ -99,6 +101,8 @@ func handleRequests() {
 	//Favicon and page spots
 	http.Handle("/favicon.ico", http.NotFoundHandler()) //For missing FavIcon
 	myRouter.HandleFunc("/", index)
+	//Handles external functions
+	myRouter.HandleFunc("/addClick", addClick).Methods("POST") //Handles clicking for an additional button
 	//Serve our static files
 	myRouter.Handle("/", http.FileServer(http.Dir("./static")))
 	myRouter.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
@@ -108,6 +112,10 @@ func handleRequests() {
 func main() {
 	rand.Seed(time.Now().UTC().UnixNano()) //Randomly Seed
 
+	//Mongo Connect
+	mongoClient = connectDB()
+	//Insert test data if it dosen't exist
+	testInsertButtonClick()
 	//Handle Requests
 	handleRequests()
 }

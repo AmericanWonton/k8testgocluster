@@ -15,3 +15,4 @@ DEBUG: We are now handling requests
 2021/04/30 10:26:15 
 
 DEBUG: We are now handling requests
+2021/04/30 15:47:08 This env variable is not present: MONGO_URI
