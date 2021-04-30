@@ -17,5 +17,9 @@ FROM alpine:latest AS production
 COPY --from=builder /app .
 #Expose port 8080:8080
 EXPOSE 8080
+#Create an environment variable for application to work with
+ENV TEST_VAR_ENV42069="I'm waking up to ash and dust"
+#Environment variables for Mongo
+ENV MONGO_URI=""
 #Run the executable,(which is whatever name you gave it in the previous step)
 CMD ["./main"]
