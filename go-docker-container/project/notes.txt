@@ -1,10 +1,8 @@
 Things to do:
 
-1. Build docker image.
 2. Figure out how to make pods from the URL of my docker image 
 3. Make sure my application can be accessed properly
-4. See if I can expose certain enviornment variables for a secrets file in my app container
-5. 
+4. Have secrets lead to pod conatiners
 
 
 

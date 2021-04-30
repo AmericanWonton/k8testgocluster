@@ -1,0 +1,14 @@
+Important Minkiube items:
+
+To restart Cluster and start over: minikube delete
+
+Creating Docker Private Credentials for secret: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+
+Creating Docker Credentials for minikube
+https://stackoverflow.com/questions/49032812/how-to-pull-image-from-dockerhub-in-kubernetes
+
+FOR MAKING THE DOCKER SECRET FILE:
+https://www.youtube.com/watch?v=asIS4KIs40M
+You need to SSH into the minkube cluster, use docker login to make that config.json file,
+THEN you need to base64 that actual file and put THAT in there.
+Also, make sure the base 64 is kept to ONE LINE in the YAML file

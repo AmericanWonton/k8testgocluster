@@ -1,0 +1,44 @@
+#App Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goproj-deployment #Name of this component
+  namespace: app-namespace #What Namespace this app will be deployed to
+  labels:
+    app: k8golangtest #The app/image running
+spec:
+  replicas: 3 #Three of these will be running at all times
+  selector:
+    matchLabels:
+      app: k8golangtest #The app/image running
+  template:
+    metadata:
+      labels:
+        app: k8golangtest #The app/image running
+    spec:
+      containers:
+      - name: k8golangtest #name of this container
+        image: americanwonton/k8golangtest:latest #What image will be run
+        ports:
+          - containerPort: 8080 #What port this container will be running on and where we direct traffic to
+        env:
+          - name: MONGO_URI #Pass our Mongo URI to this container app
+            valueFrom:
+              secretKeyRef:
+                name: mongodb-secret #Component name where our secret is
+                key: mongo-uri #Key pairing for what this secret is
+#Service Deployment
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: goproj-entrypoint
+  namespace: app-namespace
+spec:
+  type: NodePort
+  selector:
+    app: k8golangtest #This should be set above in the labels section for this deployment
+  ports:
+  - port: 8080 #Actual Port of the container/pod
+    targetPort: 8080
+    nodePort: 30001
