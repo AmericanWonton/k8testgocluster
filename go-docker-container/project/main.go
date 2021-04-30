@@ -20,6 +20,7 @@ var wg sync.WaitGroup
 
 //Here are our environment examples
 var TEST_VAR_ENV42069 string
+var MONGO_URI string
 
 /* TEMPLATE DEFINITION BEGINNING */
 var template1 *template.Template
@@ -37,6 +38,7 @@ func init() {
 
 //Set our environment variables
 func setEnvVariables() {
+	//Look up test URI
 	_, ok := os.LookupEnv("TEST_VAR_ENV42069")
 	if !ok {
 		message := "This env variable is not present: " + "TEST_VAR_ENV42069"
@@ -45,6 +47,16 @@ func setEnvVariables() {
 	} else {
 		TEST_VAR_ENV42069 = os.Getenv("TEST_VAR_ENV42069")
 		fmt.Printf("DEBUG: Environment test host is: %v\n", TEST_VAR_ENV42069)
+	}
+	//Look up MongoString URI
+	_, ok2 := os.LookupEnv("MONGO_URI")
+	if !ok2 {
+		message := "This env variable is not present: " + "MONGO_URI"
+		fmt.Println(message)
+		logWriter(message)
+	} else {
+		MONGO_URI = os.Getenv("MONGO_URI")
+		fmt.Printf("DEBUG: Environment Mongo host is: %v\n", MONGO_URI)
 	}
 }
 
