@@ -4,7 +4,14 @@ Things to do:
 3. Make sure my application can be accessed properly
 4. Have secrets lead to pod conatiners
 
-
+Minikube installation:
+https://minikube.sigs.k8s.io/docs/start/
+What you need:
+- 2CPUs or more
+2GB of free Memory
+20GB of disk space
+Internet
+Container
 
 How to create environment variables: https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
 Might want to make them permanant to your session: https://phoenixnap.com/kb/linux-set-environment-variable
