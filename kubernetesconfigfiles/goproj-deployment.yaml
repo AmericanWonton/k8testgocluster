@@ -19,6 +19,7 @@ spec:
       containers:
       - name: k8golangtest #name of this container
         image: americanwonton/k8golangtest:latest #What image will be run
+        imagePullPolicy: Always
         ports:
           - containerPort: 8080 #What port this container will be running on and where we direct traffic to
         env:

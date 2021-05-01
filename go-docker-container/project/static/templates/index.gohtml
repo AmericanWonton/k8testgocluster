@@ -16,6 +16,10 @@
     </head>
     <body>
         {{/* Here is our header */}}
+
+        {{/* Set the number of button presses we already have */}}
+        {{$theClicks := .NumOClicks}}
+        {{template "sendClicks" $theClicks}}
         
         <p>Main application page</p>
 

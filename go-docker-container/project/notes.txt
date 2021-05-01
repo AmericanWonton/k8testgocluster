@@ -8,3 +8,18 @@ Things to do:
 
 How to create environment variables: https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/
 Might want to make them permanant to your session: https://phoenixnap.com/kb/linux-set-environment-variable
+
+Start our MiniKube: minikube start --driver=docker
+
+See the recently deployed services: minikube service mongo-express-service -n THE-NAMESPACE
+
+Get all resources in a namespace: kubectl get all -n THENAMESPACE
+
+To delete minicluster: minikube delete
+
+Create Namespace: kubectl create namespace INSERTNAMESPACE
+
+How to apply a yaml file: kubectl apply -f mongo-express.yaml
+
+How to delete resouces: kubectl resource_type/delete thing_you_wanna_delete
+Example: kubectl delete deployments/goproj-deployment

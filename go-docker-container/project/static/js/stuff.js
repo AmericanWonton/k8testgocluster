@@ -1,7 +1,14 @@
+var buttonPressAmount = 0;
+
+function buttonAmount(theAmount){
+    buttonPressAmount = theAmount;
+}
+
 function buttonAdder(){
+    buttonPressAmount = buttonPressAmount + 1;
     //JSON for button adding
     var ButtonAdd = {
-        AddAmount: 1
+        AddAmount: buttonPressAmount
     };
     var jsonString = JSON.stringify(ButtonAdd); //Stringify Data
     //Send Request to end game

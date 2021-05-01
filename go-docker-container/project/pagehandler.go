@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"fmt"
+	"net/http"
+)
 
 type ViewData struct {
 	EnvVariable1 string `json:"EnvVariable1"`
@@ -15,6 +18,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 		MongoURI:     MONGO_URI,
 		NumOClicks:   howManyTimesClicked().ClickNums,
 	}
+	fmt.Printf("DEBUG: Here is how many times we clicked: %v\n", vd.NumOClicks)
 	/* Execute template, handle error */
 	err1 := template1.ExecuteTemplate(w, "index.gohtml", vd)
 	HandleError(w, err1)

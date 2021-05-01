@@ -54,8 +54,9 @@ func connectDB() *mongo.Client {
 
 //Our Test Document to see how many times we clicked a button
 type TheClicker struct {
-	SpecialID int `json:"SpecialID"`
-	ClickNums int `json:"ClickNums"`
+	SpecialID int    `json:"SpecialID"`
+	ClickNums int    `json:"ClickNums"`
+	Name      string `json:"Name"`
 }
 
 //Gets how many times this button has been clicked
@@ -66,8 +67,8 @@ func howManyTimesClicked() TheClicker {
 	//Query for the User, given the userID for the User
 	ic_collection := mongoClient.Database("thegame").Collection("timesclicked") //Here's our collection
 	theFilter := bson.M{
-		"specialid": bson.M{
-			"$eq": 1111, // check if bool field has value of 'false'
+		"name": bson.M{
+			"$eq": "Name", // check if bool field has value of 'false'
 		},
 	}
 	findOptions := options.FindOne()
@@ -118,6 +119,8 @@ func addClick(w http.ResponseWriter, r *http.Request) {
 	var postedButtonAdd ButtonAdd
 	json.Unmarshal(bs, &postedButtonAdd)
 
+	fmt.Printf("Here is our amount already: %v\n", postedButtonAdd.AddAmount)
+
 	//Declare return data and inform Ajax
 	type ReturnData struct {
 		SuccessMsg  string `json:"SuccessMsg"`
@@ -131,25 +134,27 @@ func addClick(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//Add the clicks
-	theCurrentClicker := howManyTimesClicked()
+	theCurrentClicker := TheClicker{
+		SpecialID: 1111,
+		ClickNums: postedButtonAdd.AddAmount,
+	}
+	fmt.Printf("Here is our clicker: %v\n", theCurrentClicker.ClickNums)
 
 	//Update this Document
-	message_collection := mongoClient.Database("thegame").Collection("messages") //Here's our collection
+	message_collection := mongoClient.Database("thegame").Collection("timesclicked") //Here's our collection
 	theFilter := bson.M{
 		"specialid": bson.M{
-			"$eq": 1111, // check if test value is present for reply Message
+			"$eq": theCurrentClicker.SpecialID, // check if test value is present for reply Message
 		},
 	}
-
-	updatedDocument := bson.M{}
-	updatedDocument = bson.M{
+	updatedDocument := bson.M{
 		"$set": bson.M{
-			"speicalid": 1111,
-			"clicknums": theCurrentClicker.ClickNums + 1,
+			"specialid": theCurrentClicker.SpecialID,
+			"clicknums": theCurrentClicker.ClickNums,
 		},
 	}
 
-	_, err2 := message_collection.UpdateOne(theContext, theFilter, updatedDocument)
+	theResults, err2 := message_collection.UpdateOne(theContext, theFilter, updatedDocument)
 	if err2 != nil {
 		fmt.Printf("We got an error updating this document: %v\n", err2.Error())
 		theReturnData.SuccessBool = false
@@ -161,6 +166,8 @@ func addClick(w http.ResponseWriter, r *http.Request) {
 		theReturnData.SuccessBool = true
 		theReturnData.SuccessInt = 0
 		theReturnData.SuccessMsg = "Good update"
+		fmt.Printf("DEBUG: Successful update\n")
+		fmt.Printf("DEBUG: hERE are the results: %v, %v, %v\n", theResults.MatchedCount, theResults.ModifiedCount, theResults.UpsertedCount)
 	}
 
 	//Return JSON
@@ -175,6 +182,7 @@ func testInsertButtonClick() {
 	theClicker := TheClicker{
 		SpecialID: 1111,
 		ClickNums: 0,
+		Name:      "Name",
 	}
 
 	returnedErr := "" //Declare Error to be returned
@@ -182,8 +190,8 @@ func testInsertButtonClick() {
 	//Query for the User, given the userID for the User
 	ic_collection := mongoClient.Database("thegame").Collection("timesclicked") //Here's our collection
 	theFilter := bson.M{
-		"specialid": bson.M{
-			"$eq": 1111, // check if bool field has value of 'false'
+		"name": bson.M{
+			"$eq": "Name", // check if bool field has value of 'false'
 		},
 	}
 	findOptions := options.FindOne()
@@ -203,6 +211,7 @@ func testInsertButtonClick() {
 				log.Fatal(err)
 			} else {
 				message := "inserted multiple documents"
+				fmt.Printf("Inserted the numberClicker isntead.\n")
 				logWriter(message)
 			}
 		} else {

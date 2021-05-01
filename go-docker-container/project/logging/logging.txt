@@ -16,3 +16,132 @@ DEBUG: We are now handling requests
 
 DEBUG: We are now handling requests
 2021/04/30 15:47:08 This env variable is not present: MONGO_URI
+2021/04/30 21:13:41 This env variable is not present: MONGO_URI
+2021/04/30 21:13:41 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:13:41 inserted multiple documents
+2021/04/30 21:13:41 
+
+DEBUG: We are now handling requests
+2021/04/30 21:14:56 This env variable is not present: MONGO_URI
+2021/04/30 21:14:57 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:14:57 inserted multiple documents
+2021/04/30 21:14:57 
+
+DEBUG: We are now handling requests
+2021/04/30 21:15:10 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:15:17 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:15:17 Message updated
+2021/04/30 21:15:22 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:15:22 Message updated
+2021/04/30 21:15:25 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:15:27 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:15:31 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:19:38 This env variable is not present: MONGO_URI
+2021/04/30 21:19:38 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:19:38 inserted multiple documents
+2021/04/30 21:19:38 
+
+DEBUG: We are now handling requests
+2021/04/30 21:19:45 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:19:47 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:19:47 Message updated
+2021/04/30 21:19:49 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:19:49 Message updated
+2021/04/30 21:19:51 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:19:51 Message updated
+2021/04/30 21:19:53 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:19:55 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:22:27 This env variable is not present: MONGO_URI
+2021/04/30 21:22:28 
+
+DEBUG: We are now handling requests
+2021/04/30 21:23:00 This env variable is not present: MONGO_URI
+2021/04/30 21:23:01 
+
+DEBUG: We are now handling requests
+2021/04/30 21:23:19 This env variable is not present: MONGO_URI
+2021/04/30 21:23:20 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:23:20 inserted multiple documents
+2021/04/30 21:23:20 
+
+DEBUG: We are now handling requests
+2021/04/30 21:23:28 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:30 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:30 Message updated
+2021/04/30 21:23:31 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:31 Message updated
+2021/04/30 21:23:31 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:31 Message updated
+2021/04/30 21:23:32 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:32 Message updated
+2021/04/30 21:23:34 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:36 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:38 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:38 Message updated
+2021/04/30 21:23:38 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:38 Message updated
+2021/04/30 21:23:39 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:39 Message updated
+2021/04/30 21:23:40 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:23:42 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:34:25 This env variable is not present: MONGO_URI
+2021/04/30 21:34:26 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:34:26 inserted multiple documents
+2021/04/30 21:34:26 
+
+DEBUG: We are now handling requests
+2021/04/30 21:34:30 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:34:34 Message updated
+2021/04/30 21:34:39 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:38:40 This env variable is not present: MONGO_URI
+2021/04/30 21:38:41 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:38:41 inserted multiple documents
+2021/04/30 21:38:41 
+
+DEBUG: We are now handling requests
+2021/04/30 21:40:06 This env variable is not present: MONGO_URI
+2021/04/30 21:40:06 
+
+DEBUG: We are now handling requests
+2021/04/30 21:40:15 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:40:17 Message updated
+2021/04/30 21:42:38 This env variable is not present: MONGO_URI
+2021/04/30 21:42:39 
+
+DEBUG: We are now handling requests
+2021/04/30 21:43:41 This env variable is not present: MONGO_URI
+2021/04/30 21:43:41 For 1111, no User was returned: mongo: no documents in result
+2021/04/30 21:43:41 inserted multiple documents
+2021/04/30 21:43:41 
+
+DEBUG: We are now handling requests
+2021/04/30 21:43:56 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:43:58 Message updated
+2021/04/30 21:44:00 Message updated
+2021/04/30 21:44:02 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:44:41 This env variable is not present: MONGO_URI
+2021/04/30 21:44:42 
+
+DEBUG: We are now handling requests
+2021/04/30 21:44:47 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:44:48 Message updated
+2021/04/30 21:44:49 Message updated
+2021/04/30 21:44:51 For 1111, Clicker should be successfully decoded.
+2021/04/30 21:44:52 Message updated
+2021/04/30 21:44:53 Message updated
+2021/04/30 21:44:53 Message updated
+2021/04/30 21:44:53 Message updated
+2021/04/30 21:44:53 Message updated
+2021/04/30 21:44:53 Message updated
+2021/04/30 21:44:54 Message updated
+2021/04/30 21:44:54 Message updated
+2021/04/30 21:44:54 Message updated
+2021/04/30 21:44:54 Message updated
+2021/04/30 21:44:54 Message updated
+2021/04/30 21:44:55 Message updated
+2021/04/30 21:44:55 Message updated
+2021/04/30 21:44:55 Message updated
+2021/04/30 21:44:55 Message updated
+2021/04/30 21:44:55 Message updated
+2021/04/30 21:44:55 Message updated
+2021/04/30 21:44:56 For 1111, Clicker should be successfully decoded.
