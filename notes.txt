@@ -12,3 +12,11 @@ https://www.youtube.com/watch?v=asIS4KIs40M
 You need to SSH into the minkube cluster, use docker login to make that config.json file,
 THEN you need to base64 that actual file and put THAT in there.
 Also, make sure the base 64 is kept to ONE LINE in the YAML file
+
+AmazonServer Commands:
+scp -i /d/goworkspace/src/myclusterexample/k8testgocluster/security/kubernetes-key-pair.pem installallbinary ubuntu@ec2-3-142-225-168.us-east-2.compute.amazonaws.com:
+
+ssh -i /d/goworkspace/src/myclusterexample/k8testgocluster/security/kubernetes-key-pair.pem ubuntu@ec2-3-142-225-168.us-east-2.compute.amazonaws.com
+
+Currently Using: 
+ssh -i /d/goworkspace/src/myclusterexample/k8testgocluster/security/kubernetes-key-pair.pem ubuntu@ec2-3-142-225-168.us-east-2.compute.amazonaws.com
