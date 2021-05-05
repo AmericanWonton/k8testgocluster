@@ -28,7 +28,7 @@ spec:
               secretKeyRef:
                 name: mongodb-secret #Component name where our secret is
                 key: mongo-uri #Key pairing for what this secret is
-#Service Deployment
+#Service Deployment (for Ingress)
 ---
 apiVersion: v1
 kind: Service
@@ -36,11 +36,11 @@ metadata:
   name: goproj-entrypoint
   namespace: app-namespace
 spec:
-  type: LoadBalancer
+  #type: LoadBalancer
   selector:
     app: k8golangtest #This should be set above in the labels section for this deployment
   ports:
     - protocol: TCP #How external networks can access this app
       port: 8080 #Actual Port of the container/pod
       targetPort: 8080 #Actual Port of the container/pod
-      nodePort: 30001 #This is where we can access the container externally
+      #nodePort: 30001 #This is where we can access the container externally

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: goproj-ingress
+  namespace: app-namespace
+  annotations: 
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: superultimatedbwebapp.com #Our host domain
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: goproj-entrypoint
+                port:
+                  number: 8080
