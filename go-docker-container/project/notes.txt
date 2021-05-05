@@ -23,6 +23,8 @@ Get all resources in a namespace: kubectl get all -n THENAMESPACE
 
 To delete minicluster: minikube delete
 
+To Stop MiniCluster: minikube stop
+
 Create Namespace: kubectl create namespace INSERTNAMESPACE
 
 How to apply a yaml file: kubectl apply -f mongo-express.yaml
