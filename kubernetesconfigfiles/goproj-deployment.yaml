@@ -37,11 +37,13 @@ metadata:
   namespace: app-namespace
 spec:
   #type: LoadBalancer
+  type: NodePort
   selector:
     app: k8golangtest #This should be set above in the labels section for this deployment
   ports:
     - protocol: TCP #How external networks can access this app
-      port: 80 #Actual Port of the service,(that an ingress can point to)
+      port: 80 #Actual Port of the service,(that an ingress/server can point to)
       targetPort: 8080 #Actual Port of the container/pod
+      nodePort: 30000
       name: http
       #nodePort: 30001 #This is where we can access the container externally
