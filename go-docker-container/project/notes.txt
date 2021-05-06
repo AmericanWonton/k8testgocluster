@@ -42,5 +42,5 @@ After the file is finally deployed, you'll need to add taht host and ip address 
 file: https://stackoverflow.com/questions/51511547/empty-address-kubernetes-ingress
 
 In order for our AWS client to access this cluster, we'll need to learn how to port forward
-
-
+OKAY, so according to BUNCH of places, you can't easily accept traffic from a virtual machine into a minikube....
+geuss that means Ineed to look at production ready resources...
