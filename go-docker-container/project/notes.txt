@@ -31,3 +31,16 @@ How to apply a yaml file: kubectl apply -f mongo-express.yaml
 
 How to delete resouces: kubectl resource_type/delete thing_you_wanna_delete
 Example: kubectl delete deployments/goproj-deployment
+
+For Ingress, make sure you do the following:
+Enable the Ingress service first: 
+https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
+minikube addons enable ingress
+Then, after enabling it, delete this: kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+because it's causing issues: https://stackoverflow.com/questions/61616203/nginx-ingress-controller-failed-calling-webhook
+After the file is finally deployed, you'll need to add taht host and ip address to you /etc/hosts
+file: https://stackoverflow.com/questions/51511547/empty-address-kubernetes-ingress
+
+In order for our AWS client to access this cluster, we'll need to learn how to port forward
+
+

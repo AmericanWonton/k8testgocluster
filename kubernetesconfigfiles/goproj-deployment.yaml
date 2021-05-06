@@ -41,6 +41,7 @@ spec:
     app: k8golangtest #This should be set above in the labels section for this deployment
   ports:
     - protocol: TCP #How external networks can access this app
-      port: 8080 #Actual Port of the container/pod
+      port: 80 #Actual Port of the service,(that an ingress can point to)
       targetPort: 8080 #Actual Port of the container/pod
+      name: http
       #nodePort: 30001 #This is where we can access the container externally
